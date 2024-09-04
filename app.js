@@ -339,29 +339,144 @@ console.log(a.toFixed(2));
 
 // 31. Tarmoqlanuvchi-7
 {
-    let a, b;
-    a = 4;
-    b = 0;
-    if (a < b) {
-        a = 0;
-    }
+  let a, b;
+  a = 4;
+  b = 0;
+  if (a < b) {
+    a = 0;
+  }
 }
 
 // 32. Tarmoqlanuvchi-8
 {
-    console.log("Tarmoqlanuvchi-8 ");
-    
-    let x, y, z;
-    x = 1.54;
-    y = 1;
-    z = 1.64;
-    if (x >= 1 && x <= 3)
-        console.log(x);
-    if (y >= 1 && y <= 3)
-        console.log(y);
-    if (z >= 1 && z <= 3)
-        console.log(z);
-        
-        
-        
+  console.log("Tarmoqlanuvchi-8 ");
+
+  let x, y, z;
+  x = 1.54;
+  y = 1;
+  z = 1.64;
+  if (x >= 1 && x <= 3) console.log(x);
+  if (y >= 1 && y <= 3) console.log(y);
+  if (z >= 1 && z <= 3) console.log(z);
+}
+
+// 33. Tarmoqlanuvchi-9
+{
+  let a, b;
+  a = 1;
+  b = 0;
+  let oldA = a;
+  let oldB = b;
+  if (a < b) {
+    a = (a + b) / 2;
+    b = 4 * oldX * b;
+  } else {
+    a = 4 * a * b;
+    b = (oldA + b) / 2;
+  }
+  console.log(
+    '"a" ning yangi qiymati ' +
+      a.toFixed(1) +
+      '\n"b" ning yangi qiymati ' +
+      b.toFixed(1)
+  );
+}
+
+// 34. Tarmoqlanuvchi-10
+{
+  let x, y, z;
+  x = 0;
+  y = 2;
+  z = -2;
+  if (x > 0) x = x * x;
+  if (y > 0) y = y * y;
+  if (z > 0) z = z * z;
+  console.log("x=" + x, "y=" + y, "z=" + z);
+}
+
+// 35. Tarmoqlanuvchi-11
+{
+  let x, y, z;
+  x = -3;
+  y = -5;
+  z = -8;
+  if (x < 1 && y < 1 && z < 1) {
+    let minn = Math.min(x, y, z);
+    if (minn == x) {
+      x = (y + z) / 2;
+    } else if (minn == y) {
+      y = (x + z) / 2;
+    } else if (minn == z) {
+      z = (x + y) / 2;
+    }
+  }
+  console.log(x, y, z);
+}
+// 36. Tarmoqlanuvchi-12
+{
+  let a, b, c, d;
+  a = 5;
+  b = 2;
+  c = 3;
+  d = 4;
+  if (a <= b && b <= c && c <= d) {
+    let maxx = Math.max(a, b, c, d);
+    a = maxx;
+    b = maxx;
+    c = maxx;
+    d = maxx;
+  } else {
+    let minn = Math.min(a, b, c, d);
+    a = minn;
+    b = minn;
+    c = minn;
+    d = minn;
+  }
+  console.log(a, b, c, d);
+}
+
+// 36. Tarmoqlanuvchi-13
+{
+  let x, y;
+  x = -13.07;
+  y = 6.16;
+  if (x < 0 && y < 0) {
+    x = Math.abs(x);
+    y = Math.abs(y);
+  }
+  if (x < 0 || y < 0) {
+    x += 0.5;
+    y += 0.5;
+  }
+
+  console.log(x, y);
+}
+// 37. Tarmoqlanuvchi-14
+{
+  let x, y, z, maxx;
+  x = 1;
+  y = 3;
+  z = 7;
+  if (x + y > z && x + z > y && y + z > x) {
+    console.log("YES");
+  } else console.log("NO");
+}
+
+// 38. Tarmoqlanuvchi-15
+{
+  let a, b, c;
+  a = 3;
+  b = 4;
+  c = 3;
+  const D = b * b - 4 * a * c;
+  if (D > 0) {
+    const X1 = (-b + D ** 0.5) / (2 * a);
+    const X2 = (-b - D ** 0.5) / (2 * a);
+    console.log("X1=" + X1, "X2=" + X2);
+  }
+  if (D == 0) {
+    const X = (-b / 2) * a;
+    console.log("D=0 tenglama bitta yechimga ega X=" + X);
+  }
+  if (D < 0) console.log("D<0 tenglama yechimga ega emas ");
 }
