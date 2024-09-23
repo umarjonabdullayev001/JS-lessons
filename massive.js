@@ -215,22 +215,169 @@ console.log("Hello");
 
 //  Massive - 13
 {
-    function negativeAvg(arr) {
-        let sum, h;
-        sum = 0;
-        h = 0;
-        for (let i = 0; i < arr.length; i++){
-            if (arr[i] < 0) {
-                sum += arr[i];
-                h++;
-            }
-        }
-        resultFunction = sum / h;
-        return resultFunction.toFixed(2);
+  function negativeAvg(arr) {
+    let sum, h;
+    sum = 0;
+    h = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] < 0) {
+        sum += arr[i];
+        h++;
+      }
     }
+    resultFunction = sum / h;
+    return resultFunction.toFixed(2);
+  }
 
-    let numbers = [63, 89, -6, 48, 77, -19, 16, 73, -72, 34];
-    const result = negativeAvg(numbers);
-    console.log(result);
-    
+  let numbers = [63, 89, -6, 48, 77, -19, 16, 73, -72, 34];
+  const result = negativeAvg(numbers);
+  console.log(result);
+}
+
+//  Massive - 14
+{
+  function sinOfMultiples2Or5(arr) {
+    let multip = 1;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] % 2 == 0 || arr[i] % 5 == 0) {
+        multip *= arr[i];
+      }
+    }
+    sin = Math.sin(multip);
+    return sin.toFixed(2);
+  }
+  let numbers = [62, 54, 24, 95, 67, 62, 25, 17, 77, 50, 38, 12, 90, 59, 7];
+  console.log(sinOfMultiples2Or5(numbers));
+}
+
+//  Massive - 15
+{
+  function squareSumBelowM(arr, M) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] < M) {
+        sum += arr[i] ** 2;
+      }
+    }
+    return sum;
+  }
+
+  let num = [85, 15, 57, 68, 18, 67, 7, 45, 69, 21, 1, 5, 98, 34];
+  let result = squareSumBelowM(num, 92);
+  console.log(result + " massiv - 15");
+}
+
+//  Massive - 16
+{
+  function divideByMax(arr) {
+    const max = Math.max(...arr);
+    for (let i = 0; i < arr.length; i++) {
+      arr[i] = arr[i] / max;
+    }
+    return arr;
+  }
+  let num = [30, 31, 30, 94, 61, 41, 74, 78];
+  let result = divideByMax(num);
+  console.log(result.map((i) => i.toFixed(2)));
+}
+
+//  Massive - 17
+{
+  function oddIndexSum(numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i += 2) {
+      sum += numbers[i];
+    }
+    return sum;
+  }
+  let arr = [93, 64, 63, 8, 50, 24, 32, 80, 3, 76];
+  console.log(oddIndexSum(arr));
+}
+
+//  Massive - 18
+{
+  function averageOfOddIndices(numbers) {
+    let sum, h;
+    sum = 0;
+    h = 0;
+    for (let i = 0; i < numbers.length; i += 2) {
+      sum += numbers[i];
+      h++;
+    }
+    avg = sum / h;
+    return avg.toFixed(2);
+  }
+
+  let arr = [76, 12, 51, 50, 98];
+  let result = averageOfOddIndices(arr);
+  console.log(result + " 51.00 masive 18");
+}
+
+//  Massive - 19
+{
+  function oddValuesAvg(num) {
+    let sum, h;
+    sum = 0;
+    h = 0;
+    for (let i = 0; i < num.length; i++) {
+      if (num[i] % 2 != 0) {
+        sum += num[i];
+        h++;
+      }
+    }
+    avg = sum / h;
+    return avg.toFixed(2);
+  }
+  let arr = [23, 87, 77, 4, 14, 57, 91, 16, 80, 7, 45, 78, 46];
+  console.log(oddValuesAvg(arr));
+}
+
+//  Massive - 20
+{
+  function countOutOfRange(arr, x, y) {
+    let h = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] < x || arr[i] > y) {
+        h++;
+      }
+    }
+    return h;
+  }
+  let nums = [14, 51, -83, 42, -85, -77, 91, 70, -98, 54];
+  let result = countOutOfRange(nums, 50, 99);
+  console.log(result);
+}
+
+//  Massive - 21
+{
+  function sumAfterIndexM(arr, M) {
+    let sum = 0;
+    for (let i = M; i < arr.length; i++) {
+      sum += arr[i];
+    }
+    return sum;
+  }
+  let nums = [93, 91, -45, 84, 94, -67, 48, 95, -29];
+  let result = sumAfterIndexM(nums, 5);
+  console.log(result);
+}
+
+//  Massive - 22
+{
+  const squaresSumAvg = (arr) => {
+    let sum, h;
+    sumSquare = 0;
+    sum = 0;
+    h = 0;
+    for (let i = 0; i < arr.length; i++) {
+      sumSquare += arr[i] ** 2;
+      sum += arr[i];
+      h++;
+    }
+    avg = sum / h;
+    return sumSquare, avg.toFixed(2);
+  };
+  let num = [21, 0, -72, 39, 72, -26, 76, 48, -18, 14, 26, -21, 33];
+  let result = squaresSumAvg(num);
+  console.log(result);
 }
