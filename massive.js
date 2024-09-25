@@ -374,10 +374,143 @@ console.log("Hello");
       sum += arr[i];
       h++;
     }
-    avg = sum / h;
+    const avg = sum / h;
     return sumSquare, avg.toFixed(2);
   };
   let num = [21, 0, -72, 39, 72, -26, 76, 48, -18, 14, 26, -21, 33];
   let result = squaresSumAvg(num);
   console.log(result);
+}
+
+//  Massive - 23
+{
+  function oddDivEvenSum(arr) {
+    let sum = 0;
+    for (let i = 1; i < arr.length; i += 2) {
+      sum += arr[i];
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] % 2 == 1 || arr[i] % 2 == -1) {
+        arr[i] = arr[i] / sum;
+      }
+    }
+    return arr;
+  }
+  let numbers = [3, 17, -59];
+  let result = oddDivEvenSum(numbers);
+  console.log(result.map((i) => i.toFixed(2)));
+}
+
+//  Massive - 24
+{
+  function maxToK(arr, K) {
+    const max = Math.max(...arr);
+    for (let i = 0; i < arr.length; i++) {
+      if (i == K - 1) {
+        // arr[i - 1] = arr[i];
+        arr[i] = max;
+      }
+    }
+    return arr;
+  }
+  let num = [29, 50, 14, 4, 27, -56, 96, 0];
+  let result = maxToK(num, 3);
+  console.log(result);
+}
+
+//  Massive - 25
+{
+  function cubesSumKToL(arr, k, l) {
+    let sum = 0;
+    i = k - 1;
+    while (i <= l - 1) {
+      sum += arr[i] ** 3;
+      i++;
+    }
+    return sum;
+  }
+  let nums = [0, 1, 2, 3, 4, 5];
+  let result = cubesSumKToL(nums, 1, 1);
+  console.log(result);
+}
+
+//  Massive - 26
+{
+  function negToAvgLog(numbers) {
+    let sum = 0;
+    const h = numbers.length;
+    for (let i = 0; i < h; i++) {
+      sum += numbers[i] / h;
+    }
+    for (let i = 0; i < h; i++) {
+      if (numbers[i] < 0) {
+        numbers[i] = Math.log(sum);
+      }
+    }
+    return numbers;
+  }
+  let arr = [7, 24, -5, 23, 99, -3, 24, 51];
+  let result = negToAvgLog(arr);
+  console.log(result.map((i) => i.toFixed(2)));
+}
+
+{
+  function foiz(A, x, f, oy) {
+    let foyda = ((A - x) * f) / 100;
+    let oylikTolov = (A - x + foyda) / oy;
+    return oylikTolov;
+  }
+  let result = foiz(1000000, 200000, 18, 12);
+  console.log(result);
+}
+
+// Massive - 27
+{
+  function negToMinSquare(arr) {
+    const min = Math.min(...arr);
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] < 0) {
+        arr[i] = min ** 2;
+      }
+    }
+    return arr;
+  }
+  let numbers = [46, 23, -52, 34, 6, -18, 52];
+  let result = negToMinSquare(numbers);
+  console.log(result);
+}
+
+//  Massive - 28
+{
+  function evenValuesAvg(nums) {
+    let sum, h;
+    sum = 0;
+    h = 0;
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] % 2 == 0) {
+        sum += nums[i];
+        h++;
+      }
+    }
+    const avg = sum / h;
+    return avg.toFixed(2);
+  }
+  let arr = [7, 97, -58, 90];
+  console.log(evenValuesAvg(arr));
+}
+
+//  Massive - 29
+{
+  function sumDiv2or3or5(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] % 2 == 0 || arr[i] % 3 == 0 || arr[i] % 5 == 0) {
+        sum += arr[i];
+      }
+    }
+    return sum;
+  }
+  let num = [97, 97, -92, 14, 22];
+  console.log(sumDiv2or3or5(num));
+  
 }
