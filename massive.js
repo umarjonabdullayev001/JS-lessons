@@ -91,7 +91,7 @@ console.log("Hello");
     return avg;
   }
   let numbers = [51, 49, 9, 76, 56, 78];
-  result = averageOutsideRange(numbers, 2, 4);
+  let result = averageOutsideRange(numbers, 2, 4);
   console.log(result + "  massive 5");
 }
 
@@ -106,8 +106,8 @@ console.log("Hello");
     return S;
   }
 
-  let arr = [24, 50, 72, 96, 95];
-  result = sumOfSquares(arr);
+  let arr = [24, 50, 72, 96, 95],
+    result = sumOfSquares(arr);
   console.log(result);
 }
 
@@ -121,8 +121,8 @@ console.log("Hello");
     return arr;
   }
 
-  let arr = [37, 23, 51, 47, 12, 23, 90, 85, 98];
-  result = divideByMax(arr);
+  let arr = [37, 23, 51, 47, 12, 23, 90, 85, 98],
+    result = divideByMax(arr);
   console.log(result.map((num) => num.toFixed(2)));
 }
 
@@ -136,8 +136,8 @@ console.log("Hello");
     return arr;
   }
 
-  let massive = [69, 48, 58, 45, 57, 55, 88, 89, 85];
-  result = divideByMin(massive);
+  let massive = [69, 48, 58, 45, 57, 55, 88, 89, 85],
+    result = divideByMin(massive);
   console.log(result.map((minNum) => minNum.toFixed(2)));
 }
 
@@ -154,9 +154,9 @@ console.log("Hello");
   }
 
   let arr = [26, 18, 32, 68, 81],
-    arr2 = [49, 39, 42, 12, 53, 35, 94, 21, 35, 12];
-  result = logProductAbove(arr, 6);
-  result2 = logProductAbove(arr2, 12);
+    arr2 = [49, 39, 42, 12, 53, 35, 94, 21, 35, 12],
+    result = logProductAbove(arr, 6),
+    result2 = logProductAbove(arr2, 12);
   console.log(result + "\n" + result2);
 }
 
@@ -172,8 +172,8 @@ console.log("Hello");
     return product;
   }
 
-  let arr = [7, 11, 83, 18, 31, 3, 12, 3];
-  result = productOfKandM(arr, 31, 3);
+  let arr = [7, 11, 83, 18, 31, 3, 12, 3],
+    result = productOfKandM(arr, 31, 3);
   console.log(result);
 }
 
@@ -512,5 +512,35 @@ console.log("Hello");
   }
   let num = [97, 97, -92, 14, 22];
   console.log(sumDiv2or3or5(num));
+}
+
+function fizzBus(num) {
+  if (num % 3 == 0 && num % 5 == 0) {
+    console.log("fizzBus " + num);
+  }
+  if (num % 3 == 0) {
+    console.log("fizz " + num);
+  }
+  if (num % 5 == 0) {
+    console.log("buss" + num);
+  } else console.log("no fizz no bus no fizzBus");
+}
+
+let number = 15;
+let result = fizzBus(number);
+console.log(result);
+
+
+
+
+function reverseWord(word) {
+  return word.split('').reverse().join('');
+}
+
+const word = "World";
+const reversed = reverseWord(word);
+console.log(reversed); // Output: "dlroW"
+
+function name(params) {
   
 }
